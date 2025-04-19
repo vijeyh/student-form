@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Guess the random number between 1 to 5</h1>
+    <input type="text" placeholder="Enter your number" id="inputBox" />
+    <button id="btn" onclick="change()">Check</button>
+    <p id="result">You're right / wrong</p>
+    <p id="guess">Available guess: 3</p>
+
+    <script>
+      var input = document.getElementById("inputBox");
+      var result = document.getElementById("result");
+      var guess = document.getElementById("guess");
+      var noofguess = 3;
+
+      var random = Math.floor(Math.random() * 10) + 1;
+      if (random > 5) {
+        random = random - 5;
+      }
+      function change() {
+        if (inputBox.value == random) {
+          alert("You're right");
+          result.textContent = "You're rightu";
+        } else {
+          noofguess = noofguess - 1;
+          if (noofguess == 0) {
+            alert("You lost");
+          }
+          guess.textContent = "Available guess:" + noofguess;
+          result.textContent = "You're wrong";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="add">Add</button>
+    <div id="container">
+      <p>Bye</p>
+    </div>
+    <script>
+      var container = document.getElementById("container");
+      var btn = document.getElementById("add");
+      btn.addEventListener("click", function () {
+        var heading = document.createElement("h1");
+        heading.textContent = "hello";
+        console.log(heading);
+        container.append(heading);
+      });
+    </script>
+  </body>
+</html>
